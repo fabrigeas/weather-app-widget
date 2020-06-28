@@ -1,0 +1,66 @@
+const cacheName = "@fabrigeas-weather-site-v1";
+const cacheNameV2 = "@fabrigeas-weather-site-v2";
+const assets = [
+  "/",
+  "/index.html",
+  "/main.css",
+  "/main.js",
+  "/images/192.png",
+  "/images/256.png",
+  "/images/512.png",
+  "/favicon.ico",
+];
+
+self.addEventListener("install", (installEvent) => {
+  installEvent.waitUntil(
+    caches.open(cacheName).then((cache) => {
+      cache.addAll(assets);
+    })
+  );
+});
+
+// The activate handler takes care of cleaning up old caches.
+self.addEventListener("activate", (event) => {
+  const currentCaches = [cacheName, cacheNameV2];
+  event.waitUntil(
+    caches
+      .keys()
+      .then((cacheNames) => {
+        return cacheNames.filter(
+          (cacheName) => !currentCaches.includes(cacheName)
+        );
+      })
+      .then((cachesToDelete) => {
+        return Promise.all(
+          cachesToDelete.map((cacheToDelete) => {
+            return caches.delete(cacheToDelete);
+          })
+        );
+      })
+      .then(() => self.clients.claim())
+  );
+});
+
+/** Attempt to serve via by making the actual request
+ * if it failsm respond with data from the cache
+ *
+ * @param {Event} event
+ */
+self.onfetch = function (event) {
+  event.respondWith(
+    caches.open(cacheName).then((cache) => {
+      return fetch(event.request)
+        .then((response) => {
+          // If the response was good, clone it and store it in the cache.
+          if (response.status === 200) {
+            cache.put(event.request.url, response.clone());
+          }
+          return response;
+        })
+        .catch((err) => {
+          // Network request failed, try to get it from the cache.
+          return cache.match(event.request);
+        });
+    })
+  );
+};
