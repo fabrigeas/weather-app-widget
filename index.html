@@ -1,67 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 
 <head>
   <title>Weather widget</title>
-  <meta name="description"
-    content="A weather widget written in vanilla during a code challenge for the position of junior frontend developer">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta charset="UTF-8">
-  <link rel="manifest" href="/manifest.json">
-  <meta name="theme-color" content="#3367D6">
-  <link rel="apple-touch-icon" href="/images/192.png">
+  <meta name='description'
+    content='A weather widget written in vanilla during a code challenge for the position of junior frontend developer'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <meta charset='UTF-8'>
+  <link rel='manifest' href='/manifest.json'>
+  <meta name='theme-color' content='#3367D6'>
+  <link rel='apple-touch-icon' href='/images/192.png'>
 </head>
 
 <body>
 
-  <div id="wrapper">
-
-    <div>
-
-      <div class="container">
-        <h2>Your weather</h2>
-        <h3> <span id="name"></span> - <i id="country"></i> </h3>
-        <h4 id="time"></h4>
-        <figure class="weatherTemplate weather-item" hidden>
-          <img class="icon" alt="icon">
-          <figcaption>
-            <p class="description"></p>
-          </figcaption>
-        </figure>
-        <div id="weatherContainer">
-        </div>
-      </div>
-
-      <hr>
-      <div class="container left">
-        <h2>Temperature</h2>
-        <h1 style="position: absolute; right: 10%; top: 0; font-size: 3rem;"><span id="temp"></span>°</h1>
-        <div><span>Lowest:</span> <span id="temp_min"></span>°</div>
-        <div><span>Highest:</span><span id="temp_max"></span>°</div>
-        <div><span>feels like: </span> <span id="feels_like"></span>°</div>
-        <div><span>Humidity:</span> <span id="humidity"></span>%</div>
-        <div><span>Pressure:</span> <span id="pressure"></span>mbar</div>
-      </div>
-
-      <hr>
-      <div class="container left">
-        <h2>Wind</h2>
-        <div><span>Direction:</span> <span id="deg"></span>°</div>
-        <div><span>Speed:</span> <span id="speed"></span>kmh</div>
-        <div><span>Cloud cover: </span> <span id="all"></span>%</div>
-        <div><span>Visibility: </span> <span id="visibility"></span>km</div>
-      </div>
-
-    </div>
-
-  </div>
-
-  <div id="spinner" class="modal spinner">
-    <div class="loader"></div>
-  </div>
-
-  <link rel="stylesheet" type="text/css" href="main.css">
-  <script async defer src="main.js"></script>
+  <div id='weatherWidgetDomContainer'> </div>
+  <script src='weather-widget.js'></script>
 
 </body>
 

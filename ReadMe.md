@@ -1,27 +1,29 @@
-# Weather App
+# Weather Widget
 
 Humans!
 
-This is a minimalist weather App written in vanilla js.
+This is a minimalist weather widget written in vanilla js.
 The app does the following:
 
-- get user position
+- gets user position
 - use user's position to fetch fetch weather data from API
-- parse and render fetched data
-- PWA
+- parse and render fetched weather data in a div
 
-## How to run this apps
+## How to run the widget
 
-right click on the file index.html and select `open with` , then select your favorite browser.
-That is all
-
-## Todo
-
-- test
-- implement responsive design
-
-## sample reply from Weather API
+- Link the weather-widget.js file to your .html file
+- create an empty tag with the id 'weatherWidgetDomContainer'
+- The script(widget) will automatically execute once the tab has loaded
 
 ```
-GET https://fcc-weather-api.glitch.me/api/current?lon=8.434589299999999&lat=49.4756268
+  <html>
+    <body>
+      <!-- Provide a div with the id 'weatherWidgetDomContainer' -->
+      <div id='weatherWidgetDomContainer'> </div>
+
+      <!-- Link the script file -->
+      <script src='path/to/weather-widget.js'></script>
+    </body>
+  </html>
+
 ```
