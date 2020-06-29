@@ -11,6 +11,8 @@ The app does the following:
 
 ## [Demo application](https://codesandbox.io/s/github/fabrigeas/weather-app-widget)
 
+## [Demo widget](https://codesandbox.io/s/github/fabrigeas/weather-app-widget/tree/widget)
+
 ## How to run the widget
 
 - Link the weather-widget.js file to your .html file
