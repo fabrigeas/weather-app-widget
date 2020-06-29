@@ -7,7 +7,7 @@ The app does the following:
 
 - gets user position
 - use user's position to fetch fetch weather data from API
-- parse and render fetched weather data in a div
+- parse and render fetched weather data in a placeholder div that you must provide
 
 ## How to run the widget
 
@@ -16,14 +16,11 @@ The app does the following:
 - The script(widget) will automatically execute once the tab has loaded
 
 ```
-  <html>
-    <body>
-      <!-- Provide a div with the id 'weatherWidgetDomContainer' -->
-      <div id='weatherWidgetDomContainer'> </div>
+<body>
 
-      <!-- Link the script file -->
-      <script src='path/to/weather-widget.js'></script>
-    </body>
-  </html>
+  <script src='weather-widget.js'></script>  <-- here you link(install) the widget
+  <div id='weatherWidgetDomContainer'></div> <-- provide a placeholder div where the widget will be displayed
+
+</body>
 
 ```
