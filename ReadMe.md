@@ -9,6 +9,8 @@ The app does the following:
 - use user's position to fetch fetch weather data from API
 - parse and render fetched weather data in a div
 
+## [Demo application](https://codesandbox.io/s/github/fabrigeas/weather-app-widget)
+
 ## How to run the widget
 
 - Link the weather-widget.js file to your .html file
